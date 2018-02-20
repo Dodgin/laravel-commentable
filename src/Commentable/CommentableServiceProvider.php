@@ -27,7 +27,7 @@ class CommentableServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->register('Baum\Providers\BaumServiceProvider');
+        $this->app->singleton('Baum\Providers\BaumServiceProvider');
     }
 
     /**
