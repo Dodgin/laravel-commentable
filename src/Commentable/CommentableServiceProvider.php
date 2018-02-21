@@ -17,7 +17,7 @@ class CommentableServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->commands('command.commentable.migration');
-        $this->app->bindShared('command.commentable.migration', function ($app) {
+        $this->app->singleton('command.commentable.migration', function ($app) {
             return new MigrationCommand();
         });
     }
@@ -27,7 +27,7 @@ class CommentableServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('Baum\Providers\BaumServiceProvider');
+        $this->app->register('Baum\Providers\BaumServiceProvider');
     }
 
     /**
